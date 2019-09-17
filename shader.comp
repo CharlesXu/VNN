@@ -1,0 +1,9 @@
+#version 430
+
+layout(binding = 0) buffer lay0 { float dataIn[]; };
+layout(binding = 1) buffer lay1 { float dataOut[]; };
+
+void main()
+{
+    dataOut[gl_GlobalInvocationID.x] = 5 * dataIn[gl_GlobalInvocationID.x];
+}
